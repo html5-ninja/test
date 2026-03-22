@@ -28,6 +28,8 @@
 
 [] check and fix the accessibility issues
 
-[] hrader component
+[x] hrader component, story and test
 
 [] lang switcher component
+
+[] manage the api call for the mock data from the plp page , data will be prop of a list component

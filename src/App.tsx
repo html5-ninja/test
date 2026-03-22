@@ -1,19 +1,13 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Header from "./component/Header";
+import Plp from "./page/Plp";
 
 function App() {
   return (
     <Router basename={import.meta.env.PROD ? "/test" : "/"}>
       <Header />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="flex w-full justify-center p-4">
-              <div className="border p-4 w-full">PLP go here</div>
-            </div>
-          }
-        />
+        <Route path="/" element={<Plp />} />
       </Routes>
     </Router>
   );
