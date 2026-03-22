@@ -31,5 +31,3 @@
 [] hrader component
 
 [] lang switcher component
-
-
