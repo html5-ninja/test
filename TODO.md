@@ -1,4 +1,4 @@
-[] init the project with my boilplate code https://github.com/html5-ninja/react-web-app
+[x] init the project with my boilplate code https://github.com/html5-ninja/react-web-app
 
 [] add jest
 
