@@ -1,6 +1,6 @@
 [x] init the project with my boilplate code https://github.com/html5-ninja/react-web-app
 
-[] add jest
+[x] add jest
 
 [] add react-i18next
 
@@ -8,7 +8,7 @@
 
 [] add zustand for state management
 
-[] init the app 
+[] init the app
 
 [] set github pages
 
@@ -18,7 +18,7 @@
 
 [] create product list component , story and test
 
-[] create cart component,   story and test
+[] create cart component, story and test
 
 [] compose the app with the above components
 

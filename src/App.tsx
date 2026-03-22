@@ -1,5 +1,5 @@
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import BluePrint from './component/BluePrint';
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import BluePrint from "./component/BluePrint";
 
 function App() {
   return (
