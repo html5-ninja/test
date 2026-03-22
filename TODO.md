@@ -4,7 +4,7 @@
 
 [x] add react-i18next
 
-[] add toast lib
+[x] add toast lib
 
 [] add zustand for state management
 
