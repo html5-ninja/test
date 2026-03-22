@@ -2,7 +2,7 @@
 
 [x] add jest
 
-[] add react-i18next
+[x] add react-i18next
 
 [] add toast lib
 
