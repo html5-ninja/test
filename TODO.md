@@ -8,9 +8,9 @@
 
 [x] add zustand for state management
 
-[] init the app
+[x] init the app
 
-[] set github pages
+[x] set github pages
 
 [] create product page
 

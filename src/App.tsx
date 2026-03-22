@@ -4,7 +4,7 @@ import BluePrint from "./component/BluePrint";
 function App() {
   return (
     <>
-      <Router>
+      <Router basename={import.meta.env.PROD ? "/test" : "/"}>
         <Routes>
           <Route
             path="/"
