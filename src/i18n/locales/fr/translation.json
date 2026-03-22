@@ -1,4 +1,7 @@
 {
+  "header": {
+    "title": "Boutique"
+  },
   "productCard": {
     "sku": "SKU",
     "stock": "Stock",
