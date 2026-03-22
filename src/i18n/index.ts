@@ -5,7 +5,7 @@ import fr from "./locales/fr/translation.json";
 
 i18n.use(initReactI18next).init({
   resources: { en: { translation: en }, fr: { translation: fr } },
-  lng: "en",
+  lng: navigator.language.split("-")[0],
   fallbackLng: "en",
   interpolation: { escapeValue: false },
 });
