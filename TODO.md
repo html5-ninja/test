@@ -6,7 +6,7 @@
 
 [x] add toast lib
 
-[] add zustand for state management
+[x] add zustand for state management
 
 [] init the app
 
