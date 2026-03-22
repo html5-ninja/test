@@ -25,3 +25,11 @@
 [] add i18n support to the app
 
 [] add toast notification to the app
+
+[] check and fix the accessibility issues
+
+[] hrader component
+
+[] lang switcher component
+
+

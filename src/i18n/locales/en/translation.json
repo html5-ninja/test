@@ -1,0 +1,8 @@
+{
+  "productCard": {
+    "sku": "SKU",
+    "stock": "Stock",
+    "points": "pts",
+    "addToCart": "Add to Cart"
+  }
+}
