@@ -28,5 +28,4 @@ export const Default: Story = {
     cart: [],
     onAddToCart: () => {},
   },
-  
 };
