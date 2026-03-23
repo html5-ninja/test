@@ -14,7 +14,7 @@ export interface ApiProduct {
 }
 
 export interface ApiResponse {
-  shop: string;
+  store: string;
   currency: string;
   products: ApiProduct[];
 }

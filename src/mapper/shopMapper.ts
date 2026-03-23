@@ -16,7 +16,7 @@ const mapProduct = (product: ApiProduct): Product => ({
 export const mapShop = (data: ApiResponse): Shop => {
   const products = data.products.map(mapProduct);
   return {
-    name: data.shop,
+    name: data.store,
     currency: data.currency,
     products,
     // technily limit and offset should be handled by the backend, but since we have all products in memory, we can calculate pagination here
