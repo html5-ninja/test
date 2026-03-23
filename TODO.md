@@ -18,13 +18,15 @@
 
 [] create product list component , story and test
 
+[] create pagination component , story and test
+
 [] create cart component, story and test
 
 [] compose the app with the above components
 
-[] add i18n support to the app
+[x] add i18n support to the app
 
-[] add toast notification to the app
+[x] add toast notification to the app
 
 [] check and fix the accessibility issues
 
@@ -32,4 +34,5 @@
 
 [] lang switcher component
 
-[] manage the api call for the mock data from the plp page , data will be prop of a list component
+[x] manage the api call for the mock data from the plp page , data will be prop of a list component
+[x] create a mapper for plp

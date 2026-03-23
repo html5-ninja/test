@@ -3,7 +3,9 @@
     "title": "Boutique"
   },
   "global": {
-    "failedToFetchProducts": "Échec de la récupération des produits"
+    "failedToFetchProducts": "Échec de la récupération des produits",
+    "loading": "Chargement",
+    "noProductsAvailable": "Aucun produit disponible"
   },
   "productCard": {
     "sku": "SKU",

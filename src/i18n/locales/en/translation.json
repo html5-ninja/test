@@ -3,7 +3,9 @@
     "title": "Shop"
   },
   "global": {
-    "failedToFetchProducts": "Failed to fetch products"
+    "failedToFetchProducts": "Failed to fetch products",
+    "loading": "Loading",
+    "noProductsAvailable": "No products available"
   },
   "productCard": {
     "sku": "SKU",
