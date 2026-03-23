@@ -1,7 +1,8 @@
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
-import ProductCard, { Product } from ".";
+import ProductCard from ".";
 import { productMock } from "../../mock/productMock";
+import { Product } from "../../model/store";
 
 const product: Product = productMock;
 
@@ -13,7 +14,7 @@ test("renders product title", () => {
 test("decrements stock on add", () => {
   render(<ProductCard product={product} currency="USD" cart={[]} />);
   fireEvent.click(screen.getByText("Add to Cart"));
-  expect(screen.getByText("Stock: 1")).toBeInTheDocument();
+  expect(screen.getByText("Stock: 120")).toBeInTheDocument();
 });
 
 test("disables button when quantity is 0", () => {

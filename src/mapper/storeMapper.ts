@@ -10,6 +10,7 @@ const mapProduct = (product: ApiProduct): Product => ({
   quantity: product.quantity,
   points: product.points,
   variations: product.variations,
+  stock: product.quantity,
 });
 
 export const mapStore = (data: ApiResponse): Store => {

@@ -27,6 +27,7 @@ export interface Product {
   quantity: number;
   points: number;
   variations: ProductVariation[];
+  stock: number;
 }
 
 export interface Store {

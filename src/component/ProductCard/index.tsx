@@ -2,21 +2,7 @@ import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { CartItem } from "../../store/useAppStore";
 import { useMemo } from "react";
-
-export interface Variation {
-  type: string;
-  options: string[];
-}
-
-export interface Product {
-  id: string;
-  title: string;
-  sku: string;
-  price: number;
-  quantity: number;
-  points: number;
-  variations: Variation[];
-}
+import { Product } from "../../model/store";
 
 interface ProductCardProps {
   currency: string;

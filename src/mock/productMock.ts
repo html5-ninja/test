@@ -11,4 +11,5 @@ export const productMock: Product = {
     { type: "size", options: ["small", "medium", "large"] },
     { type: "color", options: ["orange", "shiny gold"] },
   ],
+  stock: 120,
 };
