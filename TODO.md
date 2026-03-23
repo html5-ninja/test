@@ -32,7 +32,7 @@
 
 [x] hrader component, story and test
 
-[] lang switcher component
+[x] lang switcher component
 
 [x] manage the api call for the mock data from the plp page , data will be prop of a list component
 
