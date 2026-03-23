@@ -4,8 +4,9 @@ import i18n from "../i18n";
 import { getPersistedLanguage } from "../i18n/getPersistedLanguage";
 import { Product } from "../model/store";
 
-interface CartItem extends Product {
+export interface CartItem extends Product {
   quantity: number;
+  stock: number;
 }
 
 interface AppState {
@@ -14,6 +15,7 @@ interface AppState {
   cart: CartItem[];
   addToCart: (product: Product) => void;
   removeFromCart: (id: string) => void;
+  updateQuantity: (id: string, quantity: number) => void;
 }
 
 export const useAppStore = create<AppState>()(
@@ -33,11 +35,21 @@ export const useAppStore = create<AppState>()(
               ? state.cart.map((i) =>
                   i.id === product.id ? { ...i, quantity: i.quantity + 1 } : i,
                 )
-              : [...state.cart, { ...product, quantity: 1 }],
+              : [
+                  ...state.cart,
+                  { ...product, quantity: 1, stock: product.quantity },
+                ],
           };
         }),
       removeFromCart: (id) =>
         set((state) => ({ cart: state.cart.filter((i) => i.id !== id) })),
+      updateQuantity: (id, quantity) =>
+        set((state) => ({
+          cart:
+            quantity <= 0
+              ? state.cart.filter((i) => i.id !== id)
+              : state.cart.map((i) => (i.id === id ? { ...i, quantity } : i)),
+        })),
     }),
     { name: "app" },
   ),

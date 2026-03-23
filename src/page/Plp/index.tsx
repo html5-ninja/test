@@ -15,6 +15,7 @@ const Plp = () => {
   const [store, setStore] = useState<Store | null>(null);
   const [loading, setLoading] = useState(true);
   const addToCart = useAppStore((state) => state.addToCart);
+  const cart = useAppStore((state) => state.cart);
   useEffect(() => {
     setLoading(true);
     const fetchStore = async () => {
@@ -53,6 +54,7 @@ const Plp = () => {
               product={product}
               currency={store!.currency}
               onAddToCart={() => addToCart(product)}
+              cart={cart}
             />
           ))}
         </section>

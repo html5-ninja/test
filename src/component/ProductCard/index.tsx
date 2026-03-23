@@ -1,6 +1,7 @@
-import { useState } from "react";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
+import { CartItem } from "../../store/useAppStore";
+import { useMemo } from "react";
 
 export interface Variation {
   type: string;
@@ -21,21 +22,26 @@ interface ProductCardProps {
   currency: string;
   product: Product;
   onAddToCart?: (product: Product) => void;
+  cart: CartItem[];
 }
 
-const ProductCard = ({ currency, product, onAddToCart }: ProductCardProps) => {
+const ProductCard = ({
+  currency,
+  product,
+  onAddToCart,
+  cart,
+}: ProductCardProps) => {
   const { t } = useTranslation();
-  const [quantity, setQuantity] = useState(product.quantity);
+
+  const stock = useMemo(() => {
+    const cartItem = cart.find((i) => i.id === product.id);
+    return product.quantity - (cartItem?.quantity ?? 0);
+  }, [cart]);
 
   const handleAdd = () => {
-    if (quantity === 0) return;
-    setQuantity((q) => q - 1);
-    try {
-      onAddToCart?.(product);
-      toast.success(t("productCard.addedToCart", { title: product.title }));
-    } catch (error) {
-      toast.error(error instanceof Error ? error.message : String(error));
-    }
+    if (stock === 0) return;
+    onAddToCart?.(product);
+    toast.success(t("productCard.addedToCart", { title: product.title }));
   };
 
   return (
@@ -73,11 +79,11 @@ const ProductCard = ({ currency, product, onAddToCart }: ProductCardProps) => {
       </div>
       <div className="flex justify-between items-center mt-1">
         <span className="text-xs text-gray-400" aria-live="polite">
-          {t("productCard.stock", "Stock")}: {quantity}
+          {t("productCard.stock", "Stock")}: {stock}
         </span>
         <button
           onClick={handleAdd}
-          disabled={quantity === 0}
+          disabled={stock === 0}
           className="btn"
           type="button"
           aria-label={`${t("productCard.addToCart", "Add to Cart")} ${product.title}`}
