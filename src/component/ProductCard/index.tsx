@@ -1,6 +1,5 @@
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
-import { CartItem } from "../../store/useAppStore";
 import { useMemo } from "react";
 import { Product } from "../../model/store";
 
@@ -8,7 +7,7 @@ interface ProductCardProps {
   currency: string;
   product: Product;
   onAddToCart?: (product: Product) => void;
-  cart: CartItem[];
+  cart: Product[];
 }
 
 const ProductCard = ({

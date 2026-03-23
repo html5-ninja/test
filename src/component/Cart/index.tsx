@@ -1,10 +1,15 @@
 import { useTranslation } from "react-i18next";
-import { useAppStore } from "../../store/useAppStore";
 import CartItem from "../CartItem";
+import { Product } from "../../model/store";
 
-const Cart = () => {
+export interface CartProps {
+  cart: Product[];
+  removeFromCart: (id: string) => void;
+  updateQuantity: (id: string, quantity: number) => void;
+}
+
+const Cart = ({ cart, removeFromCart, updateQuantity }: CartProps) => {
   const { t } = useTranslation();
-  const { cart, removeFromCart, updateQuantity } = useAppStore();
 
   const total = cart?.reduce((sum, i) => sum + i.price * i.quantity, 0) ?? 0;
 

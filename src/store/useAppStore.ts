@@ -3,16 +3,10 @@ import { persist } from "zustand/middleware";
 import i18n from "../i18n";
 import { getPersistedLanguage } from "../i18n/getPersistedLanguage";
 import { Product } from "../model/store";
-
-export interface CartItem extends Product {
-  quantity: number;
-  stock: number;
-}
-
 interface AppState {
   language: string;
   setLanguage: (lang: string) => void;
-  cart: CartItem[];
+  cart: Product[];
   addToCart: (product: Product) => void;
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;

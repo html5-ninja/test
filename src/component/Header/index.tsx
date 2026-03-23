@@ -9,7 +9,8 @@ const LANGUAGES = [
 
 const Header = () => {
   const { t } = useTranslation();
-  const { language, setLanguage } = useAppStore();
+  const { language, setLanguage, cart, removeFromCart, updateQuantity } =
+    useAppStore();
 
   return (
     <header className="flex justify-between items-center px-6 py-4 border-b shadow-sm bg-slate-50 sticky top-0 z-10">
@@ -26,7 +27,11 @@ const Header = () => {
             </option>
           ))}
         </select>
-        <Cart />
+        <Cart
+          cart={cart}
+          removeFromCart={removeFromCart}
+          updateQuantity={updateQuantity}
+        />
       </div>
     </header>
   );
