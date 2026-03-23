@@ -48,16 +48,16 @@ const ProductCard = ({
     <article className="card" aria-label={`Product card for ${product.title}`}>
       <div>
         <span
-          className="text-xs text-gray-400"
+          className="text-xs "
           aria-label={`${t("productCard.sku", "SKU")}: ${product.sku}`}
         >
           {product.sku}
         </span>
       </div>
       <div className="flex justify-between">
-        <h3 className="font-semibold" role="heading">
+        <h2 className="font-semibold" role="heading">
           {product.title}
-        </h3>
+        </h2>
       </div>
       <div className="flex justify-between">
         <span
@@ -66,7 +66,7 @@ const ProductCard = ({
         >
           ${product.price} {currency}
         </span>
-        <span className="text-xs text-yellow-600">
+        <span className="text-xs">
           {product.points} {t("productCard.points", "pts")}
         </span>
       </div>
@@ -78,7 +78,7 @@ const ProductCard = ({
         ))}
       </div>
       <div className="flex justify-between items-center mt-1">
-        <span className="text-xs text-gray-400" aria-live="polite">
+        <span className="text-xs " aria-live="polite">
           {t("productCard.stock", "Stock")}: {stock}
         </span>
         <button

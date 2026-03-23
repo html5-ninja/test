@@ -21,7 +21,7 @@ const CartItem = ({
       <div className="flex justify-between items-start">
         <div className="flex flex-col">
           <span className="font-semibold">{product.title}</span>
-          <span className="text-xs text-gray-400">{product.sku}</span>
+          <span className="text-xs ">{product.sku}</span>
         </div>
         <button
           onMouseDown={(e) => e.preventDefault()}
