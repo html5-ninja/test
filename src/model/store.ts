@@ -33,4 +33,11 @@ export interface Store {
   name: string;
   currency: string;
   products: Product[];
+  pagination: Pagination;
+}
+
+export interface Pagination {
+  total: number;
+  totalPages: number;
+  pageSize: number;
 }
