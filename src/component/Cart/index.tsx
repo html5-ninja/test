@@ -16,14 +16,16 @@ const Cart = ({ cart, removeFromCart, updateQuantity }: CartProps) => {
   return (
     <div className="group">
       <button className="btn focus:bg-green-500" aria-label={t("cart.label")}>
-        {t("cart.label")}
+        {t("cart.label", "cart")}
         {cart?.length > 0 && (
           <span className="ml-1 font-bold">( {cart.length} )</span>
         )}
       </button>
       <div tabIndex={-1} className="popover">
         {cart?.length === 0 ? (
-          <p className="text-sm  text-center">{t("cart.empty")}</p>
+          <p className="text-sm  text-center">
+            {t("cart.empty", "Your cart is empty")}
+          </p>
         ) : (
           <>
             <div className="max-h-96 overflow-auto">
