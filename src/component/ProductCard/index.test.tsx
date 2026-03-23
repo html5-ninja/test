@@ -8,13 +8,13 @@ const product: Product = productMock;
 
 test("renders product title", () => {
   render(<ProductCard product={product} currency="USD" cart={[]} />);
-  expect(screen.getByText("Flame Lizard Plush")).toBeInTheDocument();
+  expect(screen.getByText(productMock.title)).toBeInTheDocument();
 });
 
 test("decrements stock on add", () => {
   render(<ProductCard product={product} currency="USD" cart={[]} />);
   fireEvent.click(screen.getByText("Add to Cart"));
-  expect(screen.getByText("Stock: 120")).toBeInTheDocument();
+  expect(screen.getByText(`Stock: ${productMock.stock}`)).toBeInTheDocument();
 });
 
 test("disables button when quantity is 0", () => {
