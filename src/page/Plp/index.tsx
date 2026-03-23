@@ -28,7 +28,7 @@ const Plp = () => {
   return (
     <main className="container">
       <h1 className="text-lg font-semibold">{store?.name}</h1>
-      <hr className="my-4"/>
+      <hr className="my-4" />
       {loading && <p>{t("global.loading", "Loading...")}</p>}
       {!loading && store?.products.length === 0 && (
         <p>{t("global.noProductsAvailable", "N/A")}</p>
