@@ -13,17 +13,17 @@ const product: Product = {
 };
 
 test("renders product title", () => {
-  render(<ProductCard product={product} currency="USD" />);
+  render(<ProductCard product={product} currency="USD" cart={[]}/>);
   expect(screen.getByText("Flame Lizard Plush")).toBeInTheDocument();
 });
 
 test("decrements stock on add", () => {
-  render(<ProductCard product={product} currency="USD" />);
+  render(<ProductCard product={product} currency="USD" cart={[]} />);
   fireEvent.click(screen.getByText("Add to Cart"));
   expect(screen.getByText("Stock: 1")).toBeInTheDocument();
 });
 
 test("disables button when quantity is 0", () => {
-  render(<ProductCard product={{ ...product, quantity: 0 }} currency="USD" />);
+  render(<ProductCard product={{ ...product, quantity: 0 }} currency="USD" cart={[]} />);
   expect(screen.getByText("Add to Cart")).toBeDisabled();
 });
