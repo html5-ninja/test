@@ -1,0 +1,164 @@
+{
+  "store": "PixelMon Game Shop",
+  "currency": "USD",
+  "products": [
+    {
+      "id": "P001",
+      "title": "Flame Lizard Plush",
+      "sku": "PLUSH-FL-001",
+      "price": 19.99,
+      "quantity": 120,
+      "points": 20,
+      "variations": [
+        { "type": "size", "options": ["small", "medium", "large"] },
+        { "type": "color", "options": ["orange", "shiny gold"] }
+      ]
+    },
+    {
+      "id": "P002",
+      "title": "Water Turtle Action Figure",
+      "sku": "FIG-WT-002",
+      "price": 14.99,
+      "quantity": 80,
+      "points": 15,
+      "variations": [
+        { "type": "pose", "options": ["standing", "attack stance"] },
+        { "type": "edition", "options": ["standard", "collector"] }
+      ]
+    },
+    {
+      "id": "P003",
+      "title": "Leaf Creature Starter Pack",
+      "sku": "START-LC-003",
+      "price": 29.99,
+      "quantity": 50,
+      "points": 35,
+      "variations": [{ "type": "bundle", "options": ["basic", "deluxe"] }]
+    },
+    {
+      "id": "P004",
+      "title": "Electric Mouse Hoodie",
+      "sku": "APP-EM-004",
+      "price": 39.99,
+      "quantity": 60,
+      "points": 40,
+      "variations": [
+        { "type": "size", "options": ["S", "M", "L", "XL"] },
+        { "type": "color", "options": ["yellow", "black"] }
+      ]
+    },
+    {
+      "id": "P005",
+      "title": "Master Capture Ball Replica",
+      "sku": "ACC-MB-005",
+      "price": 49.99,
+      "quantity": 30,
+      "points": 60,
+      "variations": [{ "type": "finish", "options": ["matte", "glossy"] }]
+    },
+    {
+      "id": "P006",
+      "title": "Battle Arena Playmat",
+      "sku": "MAT-BA-006",
+      "price": 24.99,
+      "quantity": 70,
+      "points": 25,
+      "variations": [
+        { "type": "design", "options": ["classic arena", "stadium", "forest"] }
+      ]
+    },
+    {
+      "id": "P007",
+      "title": "Trainer Backpack",
+      "sku": "BAG-TR-007",
+      "price": 54.99,
+      "quantity": 40,
+      "points": 55,
+      "variations": [{ "type": "color", "options": ["red", "blue", "black"] }]
+    },
+    {
+      "id": "P008",
+      "title": "Rare Card Booster Pack",
+      "sku": "CARD-RB-008",
+      "price": 9.99,
+      "quantity": 200,
+      "points": 10,
+      "variations": [
+        { "type": "series", "options": ["gen1", "gen2", "legendary"] }
+      ]
+    },
+    {
+      "id": "P009",
+      "title": "Legendary Bird Statue",
+      "sku": "STAT-LB-009",
+      "price": 79.99,
+      "quantity": 20,
+      "points": 90,
+      "variations": [
+        { "type": "element", "options": ["fire", "ice", "electric"] }
+      ]
+    },
+    {
+      "id": "P010",
+      "title": "Potion Energy Drink (Collector Can)",
+      "sku": "DRK-PE-010",
+      "price": 4.99,
+      "quantity": 300,
+      "points": 5,
+      "variations": [
+        { "type": "flavor", "options": ["berry", "citrus", "mystery"] }
+      ]
+    },
+    {
+      "id": "P011",
+      "title": "Gym Badge Pin Set",
+      "sku": "PIN-GB-011",
+      "price": 34.99,
+      "quantity": 90,
+      "points": 30,
+      "variations": [
+        { "type": "region", "options": ["kanto", "johto", "hoenn"] }
+      ]
+    },
+    {
+      "id": "P012",
+      "title": "Shadow Creature Figurine",
+      "sku": "FIG-SC-012",
+      "price": 22.99,
+      "quantity": 55,
+      "points": 28,
+      "variations": [{ "type": "form", "options": ["normal", "shadow"] }]
+    },
+    {
+      "id": "P013",
+      "title": "Evolution Stone Set",
+      "sku": "ACC-ES-013",
+      "price": 44.99,
+      "quantity": 35,
+      "points": 50,
+      "variations": [
+        { "type": "type", "options": ["fire", "water", "thunder", "leaf"] }
+      ]
+    },
+    {
+      "id": "P014",
+      "title": "Trainer Cap",
+      "sku": "APP-TC-014",
+      "price": 18.99,
+      "quantity": 110,
+      "points": 18,
+      "variations": [
+        { "type": "color", "options": ["red/white", "black/yellow"] }
+      ]
+    },
+    {
+      "id": "P015",
+      "title": "Elite Battle Box",
+      "sku": "BOX-EB-015",
+      "price": 59.99,
+      "quantity": 25,
+      "points": 70,
+      "variations": [{ "type": "edition", "options": ["standard", "premium"] }]
+    }
+  ]
+}

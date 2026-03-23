@@ -2,6 +2,9 @@
   "header": {
     "title": "Boutique"
   },
+  "global": {
+    "failedToFetchProducts": "Échec de la récupération des produits"
+  },
   "productCard": {
     "sku": "SKU",
     "stock": "Stock",

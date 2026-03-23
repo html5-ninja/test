@@ -9,7 +9,7 @@ build/
 storybook-static/
 
 # Env
-.env
+#.env sure env should not be committed but it s a test and I think that you understand that I know that I should not commit it but I need it for the test
 .env.local
 .env.*.local
 

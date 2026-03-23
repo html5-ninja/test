@@ -2,6 +2,9 @@
   "header": {
     "title": "Shop"
   },
+  "global": {
+    "failedToFetchProducts": "Failed to fetch products"
+  },
   "productCard": {
     "sku": "SKU",
     "stock": "Stock",
