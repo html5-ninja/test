@@ -7,6 +7,13 @@
     "loading": "Chargement",
     "noProductsAvailable": "Aucun produit disponible"
   },
+  "pagination": {
+    "previous": "Page précédente",
+    "next": "Page suivante",
+    "page": "Page {{n}}",
+    "goToPage": "Aller à la page {{n}}",
+    "label": "Pagination"
+  },
   "productCard": {
     "sku": "SKU",
     "stock": "Stock",

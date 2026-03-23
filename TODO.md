@@ -16,9 +16,9 @@
 
 [x] create product card component , story and test
 
-[] create product list component , story and test
+~~[] create product list component , story and test~~
 
-[] create pagination component , story and test
+[x] create pagination component , story and test
 
 [] create cart component, story and test
 

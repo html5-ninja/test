@@ -7,6 +7,13 @@
     "loading": "Loading",
     "noProductsAvailable": "No products available"
   },
+  "pagination": {
+    "previous": "Previous page",
+    "next": "Next page",
+    "page": "Page {{n}}",
+    "goToPage": "Go to page {{n}}",
+    "label": "Pagination"
+  },
   "productCard": {
     "sku": "SKU",
     "stock": "Stock",
