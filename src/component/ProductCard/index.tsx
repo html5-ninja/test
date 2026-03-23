@@ -17,11 +17,12 @@ export interface Product {
 }
 
 interface ProductCardProps {
+  currency: string;
   product: Product;
   onAddToCart?: (product: Product) => void;
 }
 
-const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
+const ProductCard = ({ currency, product, onAddToCart }: ProductCardProps) => {
   const { t } = useTranslation();
   const [quantity, setQuantity] = useState(product.quantity);
 
@@ -33,10 +34,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
 
   return (
     <article className="card" aria-label={`Product card for ${product.title}`}>
-      <div className="flex justify-between">
-        <h3 className="font-semibold" role="heading">
-          {product.title}
-        </h3>
+      <div>
         <span
           className="text-xs text-gray-400"
           aria-label={`${t("productCard.sku", "SKU")}: ${product.sku}`}
@@ -45,21 +43,28 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         </span>
       </div>
       <div className="flex justify-between">
+        <h3 className="font-semibold" role="heading">
+          {product.title}
+        </h3>
+      </div>
+      <div className="flex justify-between">
         <span
           className="font-bold text-blue-600"
           aria-label={`Price: $${product.price}`}
         >
-          ${product.price}
+          ${product.price} {currency}
         </span>
         <span className="text-xs text-yellow-600">
           {product.points} {t("productCard.points", "pts")}
         </span>
       </div>
-      {product.variations.map((v) => (
-        <div key={v.type} className="text-xs text-gray-500 capitalize">
-          {v.type}: {v.options.join(", ")}
-        </div>
-      ))}
+      <div className="flex-1">
+        {product.variations.map((v) => (
+          <div key={v.type} className="text-xs text-gray-500 capitalize">
+            {v.type}: {v.options.join(", ")}
+          </div>
+        ))}
+      </div>
       <div className="flex justify-between items-center mt-1">
         <span className="text-xs text-gray-400" aria-live="polite">
           {t("productCard.stock", "Stock")}: {quantity}

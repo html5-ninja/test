@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { getStore } from "../../api/getStore";
 import { Store } from "../../model/store";
+import ProductCard from "../../component/ProductCard";
 
 const Plp = () => {
   const { t } = useTranslation();
@@ -26,14 +27,23 @@ const Plp = () => {
 
   return (
     <main className="container">
-      <h1>{store?.name}</h1>
-      <div className="products">
-        {loading && <p>{t("global.loading", "Loading...")}</p>}
-        {!loading && store?.products.length === 0 && (
-          <p>{t("global.noProductsAvailable", "N/A")}</p>
-        )}
-        <pre>{!loading && JSON.stringify(store, null, 2)}</pre>
-      </div>
+      <h1 className="text-lg font-semibold">{store?.name}</h1>
+      <hr className="my-4"/>
+      {loading && <p>{t("global.loading", "Loading...")}</p>}
+      {!loading && store?.products.length === 0 && (
+        <p>{t("global.noProductsAvailable", "N/A")}</p>
+      )}
+      {!loading && (
+        <section className="products">
+          {store?.products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              currency={store.currency}
+            />
+          ))}
+        </section>
+      )}
     </main>
   );
 };
