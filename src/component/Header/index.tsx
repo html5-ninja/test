@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useAppStore } from "../../store/useAppStore";
+import Cart from "../Cart";
 
 const LANGUAGES = [
   { value: "en", label: "EN" },
@@ -25,7 +26,7 @@ const Header = () => {
             </option>
           ))}
         </select>
-        <div>cart</div>
+        <Cart />
       </div>
     </header>
   );

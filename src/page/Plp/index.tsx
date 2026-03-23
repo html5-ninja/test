@@ -6,6 +6,7 @@ import { getStore } from "../../api/getStore";
 import { Store } from "../../model/store";
 import ProductCard from "../../component/ProductCard";
 import Pagination from "../../component/Pagination";
+import { useAppStore } from "../../store/useAppStore";
 
 const Plp = () => {
   const { t } = useTranslation();
@@ -13,7 +14,7 @@ const Plp = () => {
   const page = Number(searchParams.get("page") ?? 1);
   const [store, setStore] = useState<Store | null>(null);
   const [loading, setLoading] = useState(true);
-
+  const addToCart = useAppStore((state) => state.addToCart);
   useEffect(() => {
     setLoading(true);
     const fetchStore = async () => {
@@ -51,6 +52,7 @@ const Plp = () => {
               key={product.id}
               product={product}
               currency={store!.currency}
+              onAddToCart={() => addToCart(product)}
             />
           ))}
         </section>

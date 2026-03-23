@@ -7,6 +7,12 @@
     "loading": "Loading",
     "noProductsAvailable": "No products available"
   },
+  "cart": {
+    "label": "Cart",
+    "empty": "Your cart is empty",
+    "remove": "Remove item",
+    "total": "Total"
+  },
   "pagination": {
     "previous": "Previous page",
     "next": "Next page",
@@ -18,6 +24,7 @@
     "sku": "SKU",
     "stock": "Stock",
     "points": "pts",
-    "addToCart": "Add to Cart"
+    "addToCart": "Add to Cart",
+    "addedToCart": "{{title}} added to cart"
   }
 }

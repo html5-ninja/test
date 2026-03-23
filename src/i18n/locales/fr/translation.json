@@ -7,6 +7,12 @@
     "loading": "Chargement",
     "noProductsAvailable": "Aucun produit disponible"
   },
+  "cart": {
+    "label": "Panier",
+    "empty": "Votre panier est vide",
+    "remove": "Supprimer l'article",
+    "total": "Total"
+  },
   "pagination": {
     "previous": "Page précédente",
     "next": "Page suivante",
@@ -18,6 +24,7 @@
     "sku": "SKU",
     "stock": "Stock",
     "points": "pts",
-    "addToCart": "Ajouter au panier"
+    "addToCart": "Ajouter au panier",
+    "addedToCart": "{{title}} ajouté au panier"
   }
 }

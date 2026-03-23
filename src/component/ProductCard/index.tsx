@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 
 export interface Variation {
@@ -29,7 +30,12 @@ const ProductCard = ({ currency, product, onAddToCart }: ProductCardProps) => {
   const handleAdd = () => {
     if (quantity === 0) return;
     setQuantity((q) => q - 1);
-    onAddToCart?.(product);
+    try {
+      onAddToCart?.(product);
+      toast.success(t("productCard.addedToCart", { title: product.title }));
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : String(error));
+    }
   };
 
   return (
