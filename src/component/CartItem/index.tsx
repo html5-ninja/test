@@ -17,7 +17,7 @@ const CartItem = ({
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col  text-sm border rounded p-2 gap-2 text-left">
+    <div className="flex flex-col text-sm border rounded p-2 gap-2 text-left">
       <div className="flex justify-between items-start">
         <div className="flex flex-col">
           <span className="font-semibold">{product.title}</span>
@@ -25,7 +25,9 @@ const CartItem = ({
         </div>
         <button
           onMouseDown={(e) => e.preventDefault()}
-          onClick={() => onRemove(product.id)}
+          onClick={() => {
+            onRemove(product.id);
+          }}
           aria-label={t("cart.remove")}
           className="btn btn-danger btn-sm"
         >
@@ -40,7 +42,7 @@ const CartItem = ({
           value={product.quantity}
           onChange={(e) => onUpdateQuantity(product.id, Number(e.target.value))}
           className="w-12 text-center border rounded text-xs p-1"
-          aria-label="Quantity"
+          aria-label={t("cart.quantity")}
         />
         <div className="flex gap-2 items-center">
           <span className="font-bold">

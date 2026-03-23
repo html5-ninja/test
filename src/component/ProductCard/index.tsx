@@ -36,7 +36,7 @@ const ProductCard = ({
   const stock = useMemo(() => {
     const cartItem = cart.find((i) => i.id === product.id);
     return product.quantity - (cartItem?.quantity ?? 0);
-  }, [cart]);
+  }, [cart, product]);
 
   const handleAdd = () => {
     if (stock === 0) return;

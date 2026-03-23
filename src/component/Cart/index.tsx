@@ -21,19 +21,21 @@ const Cart = () => {
           <p className="text-sm text-gray-400 text-center">{t("cart.empty")}</p>
         ) : (
           <>
-            <div className="flex flex-col gap-2">
-              {cart?.map((item) => (
-                <CartItem
-                  key={item.id}
-                  product={item}
-                  stock={item.stock}
-                  onRemove={removeFromCart}
-                  onUpdateQuantity={updateQuantity}
-                />
-              ))}
+            <div className="max-h-96 overflow-auto">
+              <div className="flex flex-col gap-2">
+                {cart?.map((item) => (
+                  <CartItem
+                    key={item.id}
+                    product={item}
+                    stock={item.stock}
+                    onRemove={removeFromCart}
+                    onUpdateQuantity={updateQuantity}
+                  />
+                ))}
+              </div>
             </div>
             <hr />
-            <div className="flex justify-between font-bold text-sm">
+            <div className="flex justify-between font-bold text-sm py-2 mt-2">
               <span>{t("cart.total")}</span>
               <span>${total.toFixed(2)}</span>
             </div>

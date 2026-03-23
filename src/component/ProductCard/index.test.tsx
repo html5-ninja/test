@@ -10,11 +10,10 @@ const product: Product = {
   quantity: 1,
   points: 20,
   variations: [{ type: "size", options: ["small", "medium"] }],
-
 };
 
 test("renders product title", () => {
-  render(<ProductCard product={product} currency="USD" cart={[]}/>);
+  render(<ProductCard product={product} currency="USD" cart={[]} />);
   expect(screen.getByText("Flame Lizard Plush")).toBeInTheDocument();
 });
 
@@ -25,6 +24,12 @@ test("decrements stock on add", () => {
 });
 
 test("disables button when quantity is 0", () => {
-  render(<ProductCard product={{ ...product, quantity: 0 }} currency="USD" cart={[]} />);
+  render(
+    <ProductCard
+      product={{ ...product, quantity: 0 }}
+      currency="USD"
+      cart={[]}
+    />,
+  );
   expect(screen.getByText("Add to Cart")).toBeDisabled();
 });

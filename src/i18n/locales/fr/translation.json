@@ -11,7 +11,8 @@
     "label": "Panier",
     "empty": "Votre panier est vide",
     "remove": "Supprimer l'article",
-    "total": "Total"
+    "total": "Total",
+    "quantity": "Quantité"
   },
   "pagination": {
     "previous": "Page précédente",

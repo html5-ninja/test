@@ -11,7 +11,8 @@
     "label": "Cart",
     "empty": "Your cart is empty",
     "remove": "Remove item",
-    "total": "Total"
+    "total": "Total",
+    "quantity": "Quantity"
   },
   "pagination": {
     "previous": "Previous page",
