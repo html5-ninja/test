@@ -7,9 +7,10 @@ const product: Product = {
   title: "Flame Lizard Plush",
   sku: "PLUSH-FL-001",
   price: 19.99,
-  quantity: 2,
+  quantity: 1,
   points: 20,
   variations: [{ type: "size", options: ["small", "medium"] }],
+
 };
 
 test("renders product title", () => {

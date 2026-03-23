@@ -6,23 +6,23 @@ const Cart = () => {
   const { t } = useTranslation();
   const { cart, removeFromCart, updateQuantity } = useAppStore();
 
-  const total = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
+  const total = cart?.reduce((sum, i) => sum + i.price * i.quantity, 0) ?? 0;
 
   return (
     <div className="group">
       <button className="btn focus:bg-green-500" aria-label={t("cart.label")}>
         {t("cart.label")}
-        {cart.length > 0 && (
+        {cart?.length > 0 && (
           <span className="ml-1 font-bold">( {cart.length} )</span>
         )}
       </button>
       <div tabIndex={-1} className="popover">
-        {cart.length === 0 ? (
+        {cart?.length === 0 ? (
           <p className="text-sm text-gray-400 text-center">{t("cart.empty")}</p>
         ) : (
           <>
             <div className="flex flex-col gap-2">
-              {cart.map((item) => (
+              {cart?.map((item) => (
                 <CartItem
                   key={item.id}
                   product={item}
