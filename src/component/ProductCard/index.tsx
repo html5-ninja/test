@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
-import { Product } from "../../model/store";
+import { Product } from "../../model/shop";
 
 interface ProductCardProps {
   currency: string;

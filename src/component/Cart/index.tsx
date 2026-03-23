@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import CartItem from "../CartItem";
-import { Product } from "../../model/store";
+import { Product } from "../../model/shop";
 
 export interface CartProps {
   cart: Product[];

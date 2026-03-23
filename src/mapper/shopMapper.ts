@@ -1,4 +1,4 @@
-import { ApiProduct, ApiResponse, Product, Store } from "../model/store";
+import { ApiProduct, ApiResponse, Product, Shop } from "../model/shop";
 
 const PAGE_SIZE = Number(import.meta.env.VITE_PAGINATION_PAGE_SIZE);
 
@@ -13,10 +13,10 @@ const mapProduct = (product: ApiProduct): Product => ({
   stock: product.quantity,
 });
 
-export const mapStore = (data: ApiResponse): Store => {
+export const mapShop = (data: ApiResponse): Shop => {
   const products = data.products.map(mapProduct);
   return {
-    name: data.store,
+    name: data.shop,
     currency: data.currency,
     products,
     // technily limit and offset should be handled by the backend, but since we have all products in memory, we can calculate pagination here

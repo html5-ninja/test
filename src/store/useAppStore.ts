@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import i18n from "../i18n";
 import { getPersistedLanguage } from "../i18n/getPersistedLanguage";
-import { Product } from "../model/store";
+import { Product } from "../model/shop";
 interface AppState {
   language: string;
   setLanguage: (lang: string) => void;

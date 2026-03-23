@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import ProductCard from ".";
 import { productMock } from "../../mock/productMock";
-import { Product } from "../../model/store";
+import { Product } from "../../model/shop";
 
 const product: Product = productMock;
 

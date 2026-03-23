@@ -2,8 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
-import { getStore } from "../../api/getStore";
-import { Store } from "../../model/store";
+import { getShop } from "../../api/getShop";
+import { Shop } from "../../model/shop";
 import ProductCard from "../../component/ProductCard";
 import Pagination from "../../component/Pagination";
 import { useAppStore } from "../../store/useAppStore";
@@ -12,7 +12,7 @@ const Plp = () => {
   const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const page = Number(searchParams.get("page") ?? 1);
-  const [store, setStore] = useState<Store | null>(null);
+  const [store, setStore] = useState<Shop | null>(null);
   const [loading, setLoading] = useState(true);
   const addToCart = useAppStore((state) => state.addToCart);
   const cart = useAppStore((state) => state.cart);
@@ -20,7 +20,7 @@ const Plp = () => {
     setLoading(true);
     const fetchStore = async () => {
       try {
-        const data = await getStore();
+        const data = await getShop();
         setStore(data);
       } catch (error) {
         toast.error(error instanceof Error ? error.message : String(error));

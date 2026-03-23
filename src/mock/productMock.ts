@@ -1,4 +1,4 @@
-import { Product } from "../model/store";
+import { Product } from "../model/shop";
 
 export const productMock: Product = {
   id: "P001",

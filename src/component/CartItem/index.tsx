@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Product } from "../../model/store";
+import { Product } from "../../model/shop";
 
 interface CartItemProps {
   product: Product & { quantity: number };
