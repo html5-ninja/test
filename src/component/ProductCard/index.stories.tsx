@@ -24,5 +24,9 @@ export const Default: Story = {
         { type: "color", options: ["orange", "shiny gold"] },
       ],
     },
+    currency: "USD",
+    cart: [],
+    onAddToCart: () => {},
   },
+  
 };
