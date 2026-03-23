@@ -1,16 +1,9 @@
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import ProductCard, { Product } from ".";
+import { productMock } from "../../mock/productMock";
 
-const product: Product = {
-  id: "P001",
-  title: "Flame Lizard Plush",
-  sku: "PLUSH-FL-001",
-  price: 19.99,
-  quantity: 1,
-  points: 20,
-  variations: [{ type: "size", options: ["small", "medium"] }],
-};
+const product: Product = productMock;
 
 test("renders product title", () => {
   render(<ProductCard product={product} currency="USD" cart={[]} />);
