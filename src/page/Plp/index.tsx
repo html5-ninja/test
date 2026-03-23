@@ -12,7 +12,7 @@ const Plp = () => {
   const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const page = Number(searchParams.get("page") ?? 1);
-  const [store, setStore] = useState<Shop | null>(null);
+  const [shop, setShop] = useState<Shop | null>(null);
   const [loading, setLoading] = useState(true);
   const addToCart = useAppStore((state) => state.addToCart);
   const cart = useAppStore((state) => state.cart);
@@ -21,7 +21,7 @@ const Plp = () => {
     const fetchStore = async () => {
       try {
         const data = await getShop();
-        setStore(data);
+        setShop(data);
       } catch (error) {
         toast.error(error instanceof Error ? error.message : String(error));
       } finally {
@@ -32,18 +32,18 @@ const Plp = () => {
   }, []);
 
   const paginated = useMemo(() => {
-    if (!store) return [];
-    const start = (page - 1) * store.pagination.pageSize;
-    const end = page * store.pagination.pageSize;
-    return store.products.slice(start, end);
-  }, [store, page]);
+    if (!shop) return [];
+    const start = (page - 1) * shop.pagination.pageSize;
+    const end = page * shop.pagination.pageSize;
+    return shop.products.slice(start, end);
+  }, [shop, page]);
 
   return (
     <main className="container">
-      <h1 className="text-lg font-semibold">{store?.name}</h1>
+      <h1 className="text-lg font-semibold">{shop?.name}</h1>
       <hr className="my-4" />
       {loading && <p>{t("global.loading", "Loading...")}</p>}
-      {!loading && store?.products.length === 0 && (
+      {!loading && shop?.products.length === 0 && (
         <p>{t("global.noProductsAvailable", "N/A")}</p>
       )}
       {!loading && (
@@ -52,14 +52,14 @@ const Plp = () => {
             <ProductCard
               key={product.id}
               product={product}
-              currency={store!.currency}
+              currency={shop!.currency}
               onAddToCart={() => addToCart(product)}
               cart={cart}
             />
           ))}
         </section>
       )}
-      <Pagination page={page} totalPages={store?.pagination.totalPages ?? 0} />
+      <Pagination page={page} totalPages={shop?.pagination.totalPages ?? 0} />
     </main>
   );
 };
