@@ -30,7 +30,10 @@ const ProductCard = ({
   };
 
   return (
-    <article className="card" aria-label={`Product card for ${product.title}`}>
+    <article
+      className="card  has-[:focus]:border-blue-500 has-[:focus]:shadow-lg"
+      aria-label={`Product card for ${product.title}`}
+    >
       <div>
         <span
           className="text-xs "
