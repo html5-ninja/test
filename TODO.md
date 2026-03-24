@@ -20,15 +20,15 @@
 
 [x] create pagination component , story and test
 
-[] create cart component, story and test
+[x] create cart component, story and test
 
-[] compose the app with the above components
+[x] compose the app with the above components
 
 [x] add i18n support to the app
 
 [x] add toast notification to the app
 
-[] check and fix the accessibility issues
+[x] check and fix the accessibility issues
 
 [x] hrader component, story and test
 
