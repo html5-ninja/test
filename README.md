@@ -1,114 +1,32 @@
-# Web App
+# Live demo
+https://html5-ninja.github.io/test/
 
-This is a React boilerplate project configured with Vite, TypeScript, ESLint, Prettier, Storybook, and TailwindCSS.
+## About the project
+I started the project with my boilerplate code [react-web-app](https://github.com/html5-ninja/react-web-app)
+- including Vite, TypeScript, ESLint, Prettier, Storybook and TailwindCSS.
+- added jest, react-i18next, toast lib and zustand for state management.
+- deployement is done with github pages.
 
-## Getting Started
-
-### Prerequisites
-
-Make sure you have the following installed:
-
-- Node.js (>= 14.x)
-- npm (>= 6.x) or yarn (>= 1.x)
-
-### Installation
-
-1. Clone the repository:
-
-   ```sh
-   git clone https://github.com/html5-ninja/react-web-app
-   cd react-web-app
-   ```
-
-2. Install dependencies:
-   ```sh
-   npm install
-   # or
-   yarn install
-   ```
-
-### Scripts
-
-- **Start development server:**
-
-  ```sh
-  npm run dev
-  # or
-  yarn dev
-  ```
-
-- **Build for production:**
-
-  ```sh
-  npm run build
-  # or
-  yarn build
-  ```
-
-- **Lint the code:**
-
-  ```sh
-  npm run lint
-  # or
-  yarn lint
-  ```
-
-- **Format the code:**
-
-  ```sh
-  npm run format
-  # or
-  yarn format
-  ```
-
-- **Run Storybook:**
-
-  ```sh
-  npm run storybook
-  # or
-  yarn storybook
-  ```
-
-- **Build Storybook:**
-  ```sh
-  npm run build-storybook
-  # or
-  yarn build-storybook
-  ```
-
-### Project Structure
-
+### File structure
 - `src/`: Source code for the application.
-- `public/`: Public assets.
-- `.eslintrc.js`: ESLint configuration.
-- `prettier.config.js`: Prettier configuration.
-- `tsconfig.json`: TypeScript configuration.
-- `.storybook/`: Storybook configuration.
+   - `component/`: Reusable UI components.
+   - `pages/`: Application pages.
+   - `store/`: Zustand store for state management.
+   - `i18n/`: i18n.
+   - `api/`: API call functions and mappers.
+   - `mocks/`: Mock data for development and testing.
+   - `mappers/`: prepare the data for the components.
 
-### Dependencies
+### simulate api calls
+   - json mock data placed under `public/api/data.json` folder.
+    
+### env
+   - VITE_API_URL=/api 
+   - VITE_PAGINATION_PAGE_SIZE=8
 
-- **React**: A JavaScript library for building user interfaces.
-- **Vite**: A fast build tool for modern web projects.
-- **TypeScript**: A typed superset of JavaScript.
-- **ESLint**: A tool for identifying and fixing problems in JavaScript code.
-- **Prettier**: An opinionated code formatter.
-- **Storybook**: A tool for developing UI components in isolation.
-- **TailwindCSS**: A utility-first CSS framework.
-
-### DevDependencies
-
-- Various plugins and tools for ESLint, Storybook, and TypeScript.
-
-### Configuration
-
-- **ESLint**: Configured to use the recommended settings for Storybook.
-- **Prettier**: Configured to format all files in the project.
-- **TypeScript**: Configured to work with React and Vite.
-
-## Contributing
-
-Feel free to submit issues and pull requests.
-
-## License
-
-This project is licensed under the MIT License.
+### run locally
+- clone repo `git clone https://github.com/html5-ninja/test.git`
+- run `npm install`
+- run `npm run dev` to start the development server
+- run `npm run storybook` to start the storybook server
+- run `npm run test` to run the tests 
