@@ -1,4 +1,4 @@
-# SPECS — Karo pour Reddit (Devvit)
+# SPECS — Karrouet pour Reddit (Devvit)
 
 ---
 
@@ -6,7 +6,7 @@
 
 | Élément | Détail |
 |---|---|
-| **Nom** | Karo |
+| **Nom** | Karrouet |
 | **Sous-titre** | Le jeu de carrés tunisien en losange |
 | **Genre** | Puzzle / Stratégie tour par tour avec Power-ups |
 | **Joueurs** | 2 à 4 joueurs simultanés |
