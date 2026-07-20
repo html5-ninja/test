@@ -11,7 +11,7 @@
 | **Genre** | Puzzle / Stratégie tour par tour avec Power-ups |
 | **Joueurs** | 2 à 4 joueurs simultanés |
 | **Plateforme** | Reddit — Custom Post via Devvit |
-| **Rendu** | Canvas 2D via Konva.js dans un WebView |
+| **Rendu** | Phaser 4 (WebGL) dans un WebView Devvit |
 
 ---
 
@@ -198,13 +198,13 @@
 │  │         DEVVIT WEBVIEW                 │  │
 │  │                                        │  │
 │  │   ┌──────────────────────────────┐     │  │
-│  │   │      KONVA.JS (Canvas)       │     │  │
+│  │   │      PHASER 4 (WebGL)        │     │  │
 │  │   │                              │     │  │
 │  │   │   • Grand losange (41 carrés)│     │  │
 │  │   │   • 4 couleurs joueurs       │     │  │
-│  │   │   • Animations bonus         │     │  │
-│  │   │   • Effets visuels (glow)    │     │  │
-│  │   │   • Particules               │     │  │
+│  │   │   • Particules bonus         │     │  │
+│  │   │   • Tweens + Effets (glow)   │     │  │
+│  │   │   • Scènes (menu/jeu/fin)    │     │  │
 │  │   │                              │     │  │
 │  │   └──────────────────────────────┘     │  │
 │  │                                        │  │
@@ -242,11 +242,9 @@
 | Couche | Technologie |
 |---|---|
 | **Plateforme** | Devvit (Reddit Developer Platform) |
-| **Frontend** | React (Devvit WebView) + Konva.js |
-| **Rendu graphique** | Konva.js (HTML5 Canvas 2D) |
-| **Icônes UI** | react-icons (Lucide + Game Icons) |
-| **Icônes bonus** | react-icons/gi (Game Icons — bomb, shield, swap, etc.) |
-| **Icônes interface** | react-icons/lu (Lucide — navigation, settings, trophy) |
+| **Frontend** | Devvit WebView (HTML5) |
+| **Moteur de jeu** | Phaser 4 (WebGL + Canvas fallback) |
+| **Icônes** | react-icons (Lucide + Game Icons) pour UI overlay |
 | **Backend** | Devvit Server Functions (TypeScript) |
 | **Stockage** | Redis (intégré à Devvit) |
 | **Temps réel** | Devvit Realtime API |
@@ -254,19 +252,40 @@
 | **Build** | Vite + TypeScript |
 | **Monétisation** | Devvit Goods |
 
+### Pourquoi Phaser :
+- **Moteur de jeu complet** : scènes, input, audio, tweens, particules, physique
+- **WebGL + Canvas fallback** : performances GPU avec fallback auto
+- **Système de particules intégré** : explosions, flocons, éclats (parfait pour les bonus)
+- **Tweens natifs** : animations fluides (swap, capture, glow)
+- **Input touch-friendly** : gestion tactile + souris native
+- **Grande communauté** : milliers d'exemples, plugins, documentation complète
+- **Compatible Devvit** : Reddit recommande officiellement Phaser pour les jeux Devvit
+- **Template officiel** : reddit/devvit-template-phaser existe
+
 ### Packages NPM
 
 ```json
 {
   "dependencies": {
-    "konva": "^9.x",
-    "react-konva": "^18.x",
+    "phaser": "^4.x",
     "react-icons": "^5.x"
   }
 }
 ```
 
-### Icônes SVG utilisées (react-icons)
+### Scènes Phaser
+
+| Scène | Rôle |
+|---|---|
+| `BootScene` | Chargement assets (icônes bonus, sons) |
+| `MenuScene` | Écran d'accueil + choix de mode |
+| `LobbyScene` | Attente des joueurs (2-4) |
+| `GameScene` | Plateau de jeu (grille losange + bonus) |
+| `GameOverScene` | Résultats + XP gagné |
+| `LeaderboardScene` | Classement |
+| `ShopScene` | Boutique Devvit Goods |
+
+### Icônes SVG (react-icons pour UI overlay HTML)
 
 | Bonus / Élément | Import | Package |
 |---|---|---|
@@ -282,10 +301,6 @@
 | Classement | `LuTrophy` | react-icons/lu |
 | Joueurs | `LuUsers` | react-icons/lu |
 | Paramètres | `LuSettings` | react-icons/lu |
-| Profil | `LuUser` | react-icons/lu |
-| Quêtes | `LuTarget` | react-icons/lu |
-| Shop | `LuShoppingBag` | react-icons/lu |
-| XP / Progression | `LuFlame` | react-icons/lu |
 
 ---
 
@@ -481,30 +496,35 @@ dots-and-boxes-reddit/
 │   │   └── season.ts              # Gestion des saisons
 │   └── webview/
 │       ├── index.html
-│       ├── App.tsx
-│       ├── components/
-│       │   ├── Menu.tsx            # Écran menu
-│       │   ├── Lobby.tsx           # Attente joueurs
-│       │   ├── GameBoard.tsx       # Canvas Konva.js
-│       │   ├── BonusBar.tsx        # Barre de bonus
-│       │   ├── ScoreHeader.tsx     # Scores 4 joueurs
-│       │   ├── GameOver.tsx        # Résultats + XP
-│       │   ├── Profile.tsx         # Profil joueur
-│       │   ├── Leaderboard.tsx     # Classement
-│       │   ├── Quests.tsx          # Missions
-│       │   └── Shop.tsx            # Boutique
+│       ├── main.ts                # Point d'entrée Phaser
+│       ├── config.ts              # Config Phaser (résolution, plugins)
+│       ├── scenes/
+│       │   ├── BootScene.ts       # Chargement assets
+│       │   ├── MenuScene.ts       # Écran menu
+│       │   ├── LobbyScene.ts      # Attente joueurs
+│       │   ├── GameScene.ts       # Plateau de jeu principal
+│       │   ├── GameOverScene.ts   # Résultats + XP
+│       │   ├── LeaderboardScene.ts # Classement
+│       │   └── ShopScene.ts       # Boutique
 │       ├── game/
 │       │   ├── grid.ts            # Génération grille losange
-│       │   ├── renderer.ts        # Rendu Konva.js
-│       │   ├── bonusEffects.ts    # Animations des bonus
-│       │   ├── particles.ts       # Système de particules
+│       │   ├── lineManager.ts     # Gestion des lignes (clic, hover)
+│       │   ├── boxManager.ts      # Gestion des carrés (capture)
+│       │   ├── bonusManager.ts    # Logique bonus côté client
+│       │   ├── particles.ts       # Effets particules (bombe, gel, etc.)
+│       │   ├── tweens.ts          # Animations (swap, capture, glow)
 │       │   └── state.ts           # État local du jeu
-│       └── styles/
-│           └── main.css
+│       ├── ui/
+│       │   ├── ScoreHeader.ts     # Affichage scores 4 joueurs
+│       │   ├── BonusBar.ts        # Barre de bonus interactive
+│       │   ├── TurnIndicator.ts   # Indicateur de tour
+│       │   └── XPBar.ts           # Barre de progression
+│       └── assets/
+│           ├── icons/             # Sprites bonus (PNG)
+│           ├── particles/         # Textures particules
+│           └── sounds/            # Sons (optionnel)
 ├── assets/
-│   ├── preview.png
-│   ├── icons/                     # Icônes bonus
-│   └── sounds/                    # Sons (optionnel)
+│   └── preview.png                # Image aperçu dans le feed Reddit
 └── README.md
 ```
 
