@@ -1,4 +1,4 @@
-# SPECS — Dots & Boxes pour Reddit (Devvit)
+# SPECS — Karouwet pour Reddit (Devvit)
 
 ---
 
@@ -6,8 +6,8 @@
 
 | Élément | Détail |
 |---|---|
-| **Nom** | Dots & Boxes |
-| **Sous-titre** | Jeu de Carrés en Losange |
+| **Nom** | Karouwet (كروّات) |
+| **Sous-titre** | Le jeu de carrés tunisien en losange |
 | **Genre** | Puzzle / Stratégie tour par tour avec Power-ups |
 | **Joueurs** | 2 à 4 joueurs simultanés |
 | **Plateforme** | Reddit — Custom Post via Devvit |
