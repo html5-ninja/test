@@ -244,12 +244,48 @@
 | **Plateforme** | Devvit (Reddit Developer Platform) |
 | **Frontend** | React (Devvit WebView) + Konva.js |
 | **Rendu graphique** | Konva.js (HTML5 Canvas 2D) |
+| **Icônes UI** | react-icons (Lucide + Game Icons) |
+| **Icônes bonus** | react-icons/gi (Game Icons — bomb, shield, swap, etc.) |
+| **Icônes interface** | react-icons/lu (Lucide — navigation, settings, trophy) |
 | **Backend** | Devvit Server Functions (TypeScript) |
 | **Stockage** | Redis (intégré à Devvit) |
 | **Temps réel** | Devvit Realtime API |
 | **Auth** | Automatique (compte Reddit) |
 | **Build** | Vite + TypeScript |
 | **Monétisation** | Devvit Goods |
+
+### Packages NPM
+
+```json
+{
+  "dependencies": {
+    "konva": "^9.x",
+    "react-konva": "^18.x",
+    "react-icons": "^5.x"
+  }
+}
+```
+
+### Icônes SVG utilisées (react-icons)
+
+| Bonus / Élément | Import | Package |
+|---|---|---|
+| Bombe de peinture | `GiBombExplosion` | react-icons/gi |
+| Swap | `GiSwapBag` | react-icons/gi |
+| Double coup | `GiLightningBolt` | react-icons/gi |
+| Bouclier | `GiShield` | react-icons/gi |
+| Vol de ligne | `GiCrosshair` | react-icons/gi |
+| Gel | `GiSnowflake1` | react-icons/gi |
+| Vision | `GiEyeTarget` | react-icons/gi |
+| Peinture dorée | `GiSparkles` | react-icons/gi |
+| Retour menu | `LuArrowLeft` | react-icons/lu |
+| Classement | `LuTrophy` | react-icons/lu |
+| Joueurs | `LuUsers` | react-icons/lu |
+| Paramètres | `LuSettings` | react-icons/lu |
+| Profil | `LuUser` | react-icons/lu |
+| Quêtes | `LuTarget` | react-icons/lu |
+| Shop | `LuShoppingBag` | react-icons/lu |
+| XP / Progression | `LuFlame` | react-icons/lu |
 
 ---
 
